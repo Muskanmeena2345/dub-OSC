@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Apply a nice modern font for code blocks and general UI */
+body {
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  color: #1e1e1e;
+}
+
+/* Pink and blue theme for code line numbers */
 code {
   counter-reset: step;
   counter-increment: step 0;
@@ -17,9 +25,9 @@ code .line::before {
   display: inline-block;
   position: sticky;
   left: 0;
-  background-color: white;
+  background-color: #fff;
   text-align: right;
-  color: rgba(115, 138, 148, 0.4);
+  color: #c084fc; /* soft pinkish purple for line numbers */
 }
 
 /* Hide the default number input spinners */
@@ -31,10 +39,10 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-/* Implement a custom scrollbar to preventing ugly looking scroll-overflows */
+/* Pink and blue custom scrollbar for modern look */
 .dub-scrollbar {
   scrollbar-width: auto;
-  scrollbar-color: #d1d5db #ffffff;
+  scrollbar-color: #93c5fd #fff; /* light blue thumb, white track */
 }
 
 .dub-scrollbar::-webkit-scrollbar {
@@ -43,10 +51,28 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .dub-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
+  background: #ffffff;
 }
 
 .dub-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #d1d5db;
+  background-color: #93c5fd; /* light blue thumb */
   border-radius: 10px;
+  border: 2px solid #f9a8d4; /* pink border for contrast */
+}
+
+/* Optional: Give code blocks a subtle background and rounded corners */
+code {
+  background-color: #fdf2f8; /* very light pink */
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  display: block;
+  overflow-x: auto;
+}
+
+/* Make sure inline code looks nice too */
+code.inline {
+  background-color: #f0f9ff; /* very light blue for inline */
+  border-radius: 0.25rem;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.95em;
 }
